@@ -2,13 +2,19 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "my personal blog",
-  "main": "index.js",
+  "main": "index.html",
+  "browserslist": [
+    "> 0.25%",
+    "not IE 11"
+  ],
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/scss:public/css",
     "watch:eleventy": "eleventy --serve",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass build:eleventy",
-    "build:sass": "sass  --no-source-map src/scss:public/css"
+    "build:sass": "sass  --no-source-map src/scss:public/css",
+    "build:eleventy": "eleventy",
+    "postbuild": "lightningcss --minify --targets '> 0.25%, not IE 11' public/css/*.css -o public/css/*.css"
   },
   "repository": {
     "type": "git",
