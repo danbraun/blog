@@ -1,9 +1,15 @@
-main {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: lavender;
-  color: darkslateblue;
+
+.post-listing {
+  list-style: none;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  span.excerpt {
+    font-size: 0.7em;
+  }
+}
+.post-listing:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+.post-listing:not(:first-child) {
+  margin-top: 1em;
 }

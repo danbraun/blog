@@ -10,11 +10,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
+    <header>
+      <img id="headerImg" src="https://res.cloudinary.com/brauntrutta/image/upload/s--L43KBrpc--/t_200_circle/blog/hand.png" alt="Photo of blog author">
+      <h1>{{ title }}</h1>
+
+      <nav>
+        <a href="/">Blog</a> | <a href="/about">About</a>
+      </nav>
+
+    </header>
     <main>
-      <header>
-        <h1>{{ title }}</h1>
-      </header>
+
       {{ content | safe}}
     </main>
+    <footer>
+      <div class="footer-content">
+        &copy;2023 Daniel Braun
+      </div>
+    </footer>
+    <script>
+      const myPix = new Array("DSC00939-1.png","tooclose.png","hand.png", "BWSleepy.png");
+
+      function choosePic() {
+        const randomNum = Math.floor(Math.random() * myPix.length);
+        const baseURL = "https://res.cloudinary.com/brauntrutta/image/upload/s--L43KBrpc--/t_200_circle/blog/";
+        document.getElementById("headerImg").src = `${baseURL}${myPix[randomNum]}`;
+      }
+      choosePic();
+    </script>
   </body>
 </html>

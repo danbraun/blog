@@ -3,11 +3,13 @@ title: blog.danbraun.me
 layout: base.njk
 templateEngineOverride: njk, md
 ---
-## System awaiting input
+## Posts:
 
-### Posts:
 <ul>
 {%- for post in collections.orderedPosts -%}
-  <li>{{ post.data.title }}</li>
+  {%- if post.data.publish %}
+    <li class="post-listing"><a href="{{ post.url }}">{{ post.data.title }}</a><br> 
+    <span class="excerpt">{{ post.data.excerpt }}</span></li>
+  {%- endif %}
 {%- endfor -%}
 </ul>
