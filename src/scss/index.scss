@@ -58,8 +58,12 @@ footer {
   margin-bottom: auto;
   padding-inline: 1em;
   .footer-content {
+    padding-inline: 1em;
     max-width: $content-width;
     margin: 0 auto;
+    a, a:visited {
+      color: white;
+    }
   }
 }
 @import 'partials/home';

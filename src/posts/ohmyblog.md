@@ -5,11 +5,22 @@ publish: true
 order: 1
 excerpt: Its time to write about writing a blog.
 ---
+{{page.date}}
+
 Its time to write about writing a blog.
 
 This is like a journal only not as personal. I don't keep a journal but I've often thought about it because it seems like a good idea.
 
 I've also thought of writing a blog before, because it would have the same cathartic? benefits but with less effort (less frequency) and more pictures.
+
+Here is a picture:
+
+<figure>
+    <img src="https://res.cloudinary.com/brauntrutta/image/upload/v1673212834/blog/early-morning-chicken-coop.jpg">
+    <figcaption>
+        This is a winter, early morning photo of my backyard chicken coop
+    </figcaption>
+</figure>
 
 This will also be a personal web design project. I do that stuff for a living and want to start experiencing these special powers creatively, and with the benefit of sharpening my skills.
 
@@ -19,13 +30,4 @@ Here's another reason for starting a blog. I would much prefer my and others' on
 
 Writing is healthy. My blog will be a chance for me to examine myself and ideas that take up space in my brain. I might even be able to share useful information with others, should these writings start to pop up in front of other people.
 
-So that's it. I'm going to make another go at a blog :)
-
-Right - pictures!
-
-<figure>
-    <img src="https://res.cloudinary.com/brauntrutta/image/upload/v1673212834/blog/early-morning-chicken-coop.jpg">
-    <figcaption>
-        This is a winter, early morning photo of my backyard chicken coop
-    </figcaption>
-</figure>
+So that's it. I'm going to make another go at a blog 🤙
