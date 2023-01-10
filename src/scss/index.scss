@@ -45,8 +45,6 @@ main {
   padding-block: 3em;
   max-width: $content-width;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   color: black;
   min-height: 70vh;
   padding-inline: 1em;
@@ -57,14 +55,18 @@ footer {
   background-color: $accent-color;
   margin-bottom: auto;
   padding-inline: 1em;
-  .footer-content {
-    padding-inline: 1em;
+  font-size: 0.8em;
+  .footer-content { 
     max-width: $content-width;
     margin: 0 auto;
     a, a:visited {
       color: white;
     }
   }
+}
+.post-date {
+  font-size: 0.9em;
+  font-weight: bold;
 }
 @import 'partials/home';
 @import 'partials/about';

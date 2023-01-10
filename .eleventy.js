@@ -1,4 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { DateTime } = require("luxon");
+
 module.exports = (function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addWatchTarget("./src/scss/");
@@ -11,8 +13,12 @@ module.exports = (function (eleventyConfig) {
           return a.data.order - b.data.order;
         })
         // Optional limit, remove if unwanted
-        .slice(0, 3)
+        .slice(0, 100)
     );
+  });
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
   return {
     dir: {

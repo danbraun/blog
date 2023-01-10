@@ -5,7 +5,6 @@ publish: true
 order: 1
 excerpt: Its time to write about writing a blog.
 ---
-{{page.date}}
 
 Its time to write about writing a blog.
 
