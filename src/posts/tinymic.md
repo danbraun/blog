@@ -2,7 +2,7 @@
 tags: music
 title: Tiny Microphones from Slovakia
 publish: true
-order: 2
+order: 4
 excerpt: Adorable little mics
 templateEngineOverride: njk,md
 ---
@@ -10,7 +10,7 @@ templateEngineOverride: njk,md
 {% from "../macros/figure.njk" import figure %}
 {% from "../macros/audio.njk" import audio %}
 
-Maybe I was lured by perceived scarcity?
+Maybe I was lured by perceived scarcity? ferp
 
 Madison Art Fair
 {{ audio("https://res.cloudinary.com/brauntrutta/video/upload/v1673580073/blog/Madison-Art-Fair-220709_01.mp3") }}
