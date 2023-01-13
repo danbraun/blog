@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ '/css/index.css' | safe}}">
+    <link rel="stylesheet" href="{{ '/css/style.css' | safe}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/6f2a8c42bd.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
       <nav>
         <a href="/">Blog</a> | <a href="/about">About</a>
       </nav>
-
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&display=swap">
     </header>
     <main>
 
@@ -28,7 +28,8 @@
     </main>
     <footer>
       <div class="footer-content">
-        &copy;{% year %} Daniel Braun |  <a href="http://localhost:8080/feed.xml">RSS Feed&nbsp;<i class="fa-solid fa-square-rss fa-lg"></i></a> | Built with Eleventy {{ eleventy.version }}
+        &copy;{% year %} Daniel Braun |  <a href="http://localhost:8080/feed.xml">RSS Feed&nbsp;
+        <i class="fa-solid fa-square-rss fa-lg"></i></a> | Built with Eleventy {{ eleventy.version }}
       </div>
     </footer>
     <script>
