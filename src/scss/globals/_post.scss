@@ -1,3 +1,4 @@
+@use '../util';
 figure {
     margin: 0;
     figcaption {
@@ -9,7 +10,7 @@ figure {
     }
 }
 .icon {
-    // color: $accent-color;
+    color: util.$accent-color;
 }
 .next-prev-post {
     clear:both;
