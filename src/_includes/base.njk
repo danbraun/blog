@@ -32,15 +32,6 @@
         <i class="fa-solid fa-square-rss fa-lg"></i></a> | Built with Eleventy {{ eleventy.version }}
       </div>
     </footer>
-    <script>
-      const myPix = new Array("DSC00939-1.png","tooclose.png","hand.png", "BWSleepy.png");
-
-      function choosePic() {
-        const randomNum = Math.floor(Math.random() * myPix.length);
-        const baseURL = "https://res.cloudinary.com/brauntrutta/image/upload/s--L43KBrpc--/t_200_circle/blog/";
-        document.getElementById("headerImg").src = `${baseURL}${myPix[randomNum]}`;
-      }
-      choosePic();
-    </script>
+    <script src="js/bundle.js"></script>
   </body>
 </html>
