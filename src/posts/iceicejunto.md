@@ -6,7 +6,9 @@ order: 4
 excerpt: Making music with a glass of ice water
 templateEngineOverride: njk,md
 ---
+
 {% from "../macros/figure.njk" import figure %}
+{% from "../macros/audio.njk" import audio %}
 
 I recently joined an online [project by Marc Weidenbaum](https://disquiet.com/2012/01/27/the-disquiet-junto/) a.k.a. Disquiet on [Mastondon](http://post.lurk.org/@disquiet). Basically, Marc drops an email once a week with a musical or audio assignment to be completed in 4 days. Things like "use one of these previously created drum loops" or, in the case of this post, "create a track using ice clanking in a glass".
 
@@ -18,14 +20,7 @@ I clipped a pair of [LOM mikroUši](https://store.lom.audio/collections/mikrousi
 
 Here's part of that recording:
 
-<audio controls>
-  <source src="https://res.cloudinary.com/brauntrutta/video/upload/v1673314898/blog/ice-glass-short.mp3" type="audio/mpeg" />
-  <!-- fallback for non-supporting browsers goes here -->
-  <p>
-    Your browser does not support HTML audio, but you can still
-    <a href=https://res.cloudinary.com/brauntrutta/video/upload/v1673314898/blog/ice-glass-short.mp3">download the file</a>.
-  </p>
-</audio>
+{{ audio("https://res.cloudinary.com/brauntrutta/video/upload/v1673314898/blog/ice-glass-short.mp3") }}
 
 In Bitwig I chopped up a dozen or so parts that had interesting variations and tones to make a sort of marimba sound.
 
