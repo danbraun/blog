@@ -11,15 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/6f2a8c42bd.js" crossorigin="anonymous"></script>
     {% metagen
-      title=title,
-      desc="Dan Braun's Blog",
-      url="https://blog.danbraun.me" + page.url,
-      img="https://blog.danbraun.me/assets/social.png",
-      img_alt="Dan Braun standing in a field thinking about his blog",
-      twitter_card_type="summary_large_image",
-      name="Daniel Braun",
-      generator="eleventy"
-    %}
+    title = title,
+    desc = excerpt,
+    url = "https://blog.danbraun.me" + page.url,
+    img = "https://blog.danbraun.me/assets/social.png",
+    img_alt = "Dan Braun standing in a field thinking about his blog",
+    twitter_card_type = "summary_large_image",
+    name = "Daniel Braun",
+    generator = "eleventy"
+ %}
   </head>
   <body>
     <header>
@@ -41,11 +41,20 @@
       <div class="footer-content">
         <ul>
           <li>&copy;{% year %} Daniel Braun</li>
-          <li><a href="/feed.xml">RSS Feed&nbsp;<i class="fa-solid fa-square-rss fa-lg"></i></a></li>
+          <li>
+            <a href="/feed.xml">RSS Feed&nbsp;<i class="fa-solid fa-square-rss fa-lg"></i>
+            </a>
+          </li>
           <li>Built with Eleventy {{ eleventy.version }}</li>
         </ul>
       </div>
     </footer>
+    <script>
+      const myPix = new Array();
+      {%- for image in headerImageList %}
+        myPix.push("{{image}}");
+      {%- endfor %}
+    </script>
     <script src="{{ '/js/bundle.js' | url }}"></script>
   </body>
 </html>

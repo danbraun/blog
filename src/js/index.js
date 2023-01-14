@@ -1,3 +1,5 @@
-import { random } from './random'
+import { randomHeaderImage } from './randomHeaderImage'
 
-random();
+if (myPix) {
+    randomHeaderImage(myPix);
+}

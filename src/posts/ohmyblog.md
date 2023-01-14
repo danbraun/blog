@@ -4,7 +4,9 @@ title: Oh My Blog
 publish: true
 order: 1
 excerpt: Its time to write about writing a blog.
+templateEngineOverride: njk,md
 ---
+{% from "../macros/figure.njk" import figure %}
 
 Its time to write about writing a blog.
 
@@ -14,12 +16,7 @@ I've also thought of writing a blog before, because it would have the same catha
 
 Here is a picture:
 
-<figure>
-    <img src="https://res.cloudinary.com/brauntrutta/image/upload/v1673212834/blog/early-morning-chicken-coop.jpg">
-    <figcaption>
-        This is a winter, early morning photo of my backyard chicken coop
-    </figcaption>
-</figure>
+{{ figure("early-morning-chicken-coop.jpg","A lighted chicken coop casting shadows in the early morning dark","This is a winter, early morning photo of my backyard chicken coop") }}
 
 This will also be a personal web design project. I do that stuff for a living and want to start experiencing these special powers creatively, and with the benefit of sharpening my skills.
 
