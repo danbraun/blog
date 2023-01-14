@@ -1,6 +1,5 @@
-const esbuild = require("esbuild");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { getOrderedPosts, getPostDate } = require("./utils");
+const { getOrderedPosts, getPostDate, buildJS } = require("./utils");
 
 module.exports = (function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -12,16 +11,8 @@ module.exports = (function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   // make a friendly date for post listings and pages
   eleventyConfig.addFilter("postDate", (dateObj) => getPostDate(dateObj));
-
-  eleventyConfig.on("eleventy.before", async () => {
-    await esbuild.build({
-      entryPoints: ["src/js/index.js"],
-      bundle: true,
-      sourcemap: true,
-      outfile: "public/js/bundle.js",
-      target: ["es6"]
-    })
-  })
+  // build js bundle with esbuild
+  eleventyConfig.on("eleventy.before", () => buildJS())
 
   return {
     dir: {

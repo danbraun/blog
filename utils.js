@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const esbuild = require("esbuild");
 
 const getOrderedPosts = (collection) => {
     return (
@@ -17,4 +18,14 @@ const getPostDate = (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
 }
 
-module.exports = { getOrderedPosts, getPostDate };
+const buildJS = async () => {
+    await esbuild.build({
+        entryPoints: ["src/js/index.js"],
+        bundle: true,
+        sourcemap: true,
+        outfile: "public/js/bundle.js",
+        target: ["es6"]
+    })
+}
+
+module.exports = { getOrderedPosts, getPostDate, buildJS };
