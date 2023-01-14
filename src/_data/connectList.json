@@ -1,7 +1,8 @@
 [
     {
         "url": "https://social.bitwig.community/@thegoldenpath#",
-        "name": "Mastodon"
+        "name": "Mastodon",
+        "rel": "me"
     },
     {
         "url": "https://www.youtube.com/channel/UC8xjXCVoTUiSblFHcLCg6SA",
