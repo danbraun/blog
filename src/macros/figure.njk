@@ -1,7 +1,7 @@
 {% macro figure(src, alt, caption) %}
   <figure>
     <a href="{{ src }}">
-      <img src="{{ src }}" alt="{{ alt }}"></a>
+      <img src="{{ src }}" alt="{{ alt }}" loading="lazy"></a>
     <figcaption>{{ caption }}</figcaption>
   </figure>
 {% endmacro %}

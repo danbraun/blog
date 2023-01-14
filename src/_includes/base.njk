@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ '/css/style.css' | safe}}">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/6f2a8c42bd.js" crossorigin="anonymous"></script>
@@ -13,7 +13,7 @@
   <body>
     <header>
       <a href="/">
-        <img id="headerImg" src="https://res.cloudinary.com/brauntrutta/image/upload/s--L43KBrpc--/t_200_circle/blog/hand.png" alt="Photo of blog author">
+        <img width="200" height="200" id="headerImg" class="header-circle-image" src="" alt="Photo of blog author">
       </a>
       <h1>{{ title }}</h1>
 
@@ -32,6 +32,6 @@
         <i class="fa-solid fa-square-rss fa-lg"></i></a> | Built with Eleventy {{ eleventy.version }}
       </div>
     </footer>
-    <script src="js/bundle.js"></script>
+    <script src="{{ '/js/bundle.js' | url }}"></script>
   </body>
 </html>
