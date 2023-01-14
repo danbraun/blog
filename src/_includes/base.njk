@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="{{ '/css/index.css' | safe}}">
-</head>
-<body>
-  <main>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | url}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/6f2a8c42bd.js" crossorigin="anonymous"></script>
+    {% metagen
+    title = title,
+    desc = excerpt,
+    url = "https://blog.danbraun.me" + page.url,
+    img = "https://blog.danbraun.me/assets/social.png",
+    img_alt = "Dan Braun standing in a field thinking about his blog",
+    twitter_card_type = "summary_large_image",
+    name = "Daniel Braun",
+    generator = "eleventy"
+ %}
+  </head>
+  <body>
     <header>
+      <a href="/">
+        <img width="200" height="200" id="headerImg" class="header-circle-image" src="/assets/circle-placeholder.png" alt="Photo of blog author">
+      </a>
       <h1>{{ title }}</h1>
+
+      <nav>
+        <a href="/">Blog</a> | <a href="/about">About</a>
+      </nav>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&display=swap">
     </header>
-    {{ content | safe}}
-  </main>
-</body>
+    <main>
+
+      {{ content | safe}}
+    </main>
+    <footer>
+      <div class="footer-content">
+        <ul>
+          <li>&copy;{% year %} Daniel Braun</li>
+          <li>
+            <a href="/feed.xml">RSS Feed&nbsp;<i class="fa-solid fa-square-rss fa-lg"></i>
+            </a>
+          </li>
+          <li>Built with Eleventy {{ eleventy.version }}</li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      const myPix = new Array();
+      {%- for image in headerImageList %}
+        myPix.push("{{image}}");
+      {%- endfor %}
+    </script>
+    <script src="{{ '/js/bundle.js' | url }}"></script>
+  </body>
 </html>

@@ -1,0 +1,147 @@
+@use '../util';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: radial-gradient(circle, white 0%, rgba(184, 184, 184, 1) 90%);
+  //background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+h1 {
+  letter-spacing: util.$wide-spacing;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+p {
+  line-height: 1.4em;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: util.$accent-color;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+p a {
+  font-weight: bold;
+  color: util.$accent-color-light;
+}
+
+audio {
+  max-width: 100%;
+}
+
+nav {
+  margin-block: 1em;
+}
+
+header {
+  padding-top: 3em;
+  padding-bottom: 1em;
+  padding-inline: 1em;
+  background-color: black;
+  color: white;
+  background-image: linear-gradient(135deg, util.$accent-color, 10%, util.$accent-color-light 100%);
+  border-bottom: solid util.$accent-color 0.5em;
+  text-align: center;
+
+  nav {
+    letter-spacing: util.$wide-spacing;
+  }
+
+  a,
+  a:visited {
+    color: white;
+  }
+
+  .header-circle-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1em;
+  }
+}
+
+main {
+  padding-block: 3em;
+  max-width: util.$content-width;
+  margin: 0 auto;
+  color: black;
+  min-height: 70vh;
+  padding-inline: 1em;
+}
+
+footer {
+  color: white;
+  padding-block: 1em;
+  background-color: util.$accent-color;
+  margin-bottom: auto;
+  padding-inline: 1em;
+  font-size: 0.8em;
+  text-align: center;
+
+  .footer-content {
+    max-width: util.$content-width;
+    margin: 0 auto;
+    letter-spacing: util.$wide-spacing;
+
+    li {
+      margin-block: 1em;
+      list-style: none;
+    }
+
+    a,
+    a:visited {
+      color: white;
+    }
+  }
+}
+
+.post-date {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: util.$accent-color;
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding-block: 4em;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    li {
+      margin-block: 0;
+    }
+  }
+
+}

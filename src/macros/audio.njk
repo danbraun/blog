@@ -1,0 +1,10 @@
+{% macro audio(source) %}
+<audio controls>
+  <source src="{{ source }}" type="audio/mpeg" />
+  <!-- fallback for non-supporting browsers goes here -->
+  <p>
+    Your browser does not support HTML audio, but you can still
+    <a href="{{ source }}">download the file</a>.
+  </p>
+</audio>
+{% endmacro %}

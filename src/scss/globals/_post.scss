@@ -1,0 +1,33 @@
+@use '../util';
+figure {
+    margin: 0 0 1em 0;
+    figcaption {
+        text-align: center;
+        font-size: .8em
+    }
+    img {
+        width: 100%;
+    }
+}
+audio {
+    margin-bottom: 1.5em;
+}
+.icon {
+    color: util.$accent-color;
+}
+.next-prev-post {
+    clear:both;
+    font-size: .8em;    
+    display: flex;
+    justify-content: space-between; 
+    a {
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 480px) {
+    .post-image-small {
+        float: right;
+        margin: 0 0 1em 1em;
+    }
+}

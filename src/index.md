@@ -1,5 +1,6 @@
 ---
 title: blog.danbraun.me
-layout: base.njk
+layout: home.njk
+excerpt: "Dan Braun's blog"
+templateEngineOverride: njk, md
 ---
-## System awaiting input

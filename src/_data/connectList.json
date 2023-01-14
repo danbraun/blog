@@ -1,0 +1,26 @@
+[
+    {
+        "url": "https://social.bitwig.community/@thegoldenpath#",
+        "name": "Mastodon"
+    },
+    {
+        "url": "https://www.youtube.com/channel/UC8xjXCVoTUiSblFHcLCg6SA",
+        "name": "Youtube"
+    },
+    {
+        "url": "https://open.spotify.com/user/dan_default",
+        "name": "Spotify"
+    },
+    {
+        "url": "https://www.strava.com/athletes/3546987",
+        "name": "Strava"
+    },
+    {
+        "url": "ttps://soundcloud.com/14-below-zero",
+        "name": "Soundcloud"
+    },
+    {
+        "url": "/feed.xml",
+        "name": "RSS Feed"
+    }
+]

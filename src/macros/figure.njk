@@ -1,0 +1,7 @@
+{% macro figure(src, alt, caption) %}
+  <figure>
+    <a href="https://res.cloudinary.com/brauntrutta/image/upload/v1673669311/blog/{{ src }}">
+      <img src="https://res.cloudinary.com/brauntrutta/image/upload/v1673669311/blog/{{ src }}" alt="{{ alt }}" loading="lazy"></a>
+    <figcaption>{{ caption }}</figcaption>
+  </figure>
+{% endmacro %}

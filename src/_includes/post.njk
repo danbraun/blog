@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<div class="post-date">
+  <i class="icon fa-regular fa-calendar fa-lg"></i> {{ page.date | postDate }}
+</div>
+
+{{ content | safe}}
+
+<nav class="next-prev-post">
+  {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+  {% set nextPost = collections.post | getNextCollectionItem(page) %}
+  <div>
+    {% if previousPost %}Previous Post:<br>
+      <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+    {% endif %}
+  </div>
+  <div>
+    {% if nextPost %}Next Post:<br>
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+    {% endif %}
+  </div>
+</nav>
