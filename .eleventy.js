@@ -1,7 +1,11 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const metagen = require('eleventy-plugin-metagen');
+
 const { getOrderedPosts, getPostDate, buildJS } = require("./utils");
 
 module.exports = (function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('./src/assets/');
+  eleventyConfig.addPassthroughCopy('./src/favicon.png');
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addWatchTarget("./src/scss/");
   eleventyConfig.addWatchTarget("./src/js/");
@@ -13,7 +17,7 @@ module.exports = (function (eleventyConfig) {
   eleventyConfig.addFilter("postDate", (dateObj) => getPostDate(dateObj));
   // build js bundle with esbuild
   eleventyConfig.on("eleventy.before", () => buildJS())
-
+  eleventyConfig.addPlugin(metagen);
   return {
     dir: {
       input: "src",

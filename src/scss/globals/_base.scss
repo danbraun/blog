@@ -17,6 +17,10 @@
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
   }
+  h1 {
+    letter-spacing: util.$wide-spacing;
+    text-transform: uppercase;
+  }
   p {
     line-height: 1.4em;
   }
@@ -43,6 +47,9 @@
     background-image: linear-gradient( 135deg, util.$accent-color, 10%, util.$accent-color-light 100%);
     border-bottom: solid util.$accent-color 0.5em;
     text-align: center;
+    nav {
+      letter-spacing: util.$wide-spacing;
+    }
     a, a:visited {
       color: white;
     }
@@ -62,14 +69,20 @@
   }
   footer {
     color: white;
-    padding-block: 3em;
+    padding-block: 1em;
     background-color: util.$accent-color;
     margin-bottom: auto;
     padding-inline: 1em;
     font-size: 0.8em;
+    text-align: center;
     .footer-content { 
       max-width: util.$content-width;
       margin: 0 auto;
+      letter-spacing: util.$wide-spacing;
+      li {
+        margin-block: 1em;
+        list-style: none;
+      }
       a, a:visited {
         color: white;
       }
@@ -79,4 +92,17 @@
     font-size: 0.9em;
     font-weight: bold;
     color: util.$accent-color;
+  }
+  @media (min-width: 768px) {
+    footer {
+      padding-block: 4em;
+      ul {
+        display: flex;
+        justify-content: space-around;
+      }
+      li {
+        margin-block: 0;
+      }
+    }
+    
   }
