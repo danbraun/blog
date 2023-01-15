@@ -15,7 +15,7 @@ const getOrderedPosts = (collection) => {
 }
 
 const getPostDate = (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toLocaleString(DateTime.DATE_FULL);
 }
 
 const buildJS = async () => {
