@@ -6,6 +6,7 @@ const { getOrderedPosts, getPostDate, buildJS } = require("./utils");
 module.exports = (function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/');
   eleventyConfig.addPassthroughCopy('./src/favicon.png');
+  eleventyConfig.addPassthroughCopy('./src/robots.txt');
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addWatchTarget("./src/scss/");
   eleventyConfig.addWatchTarget("./src/js/");

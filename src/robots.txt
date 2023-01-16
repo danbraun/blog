@@ -1,0 +1,4 @@
+Sitemap: https://blog.danbraun.me/sitemap.xml
+
+User-agent: *
+Disallow:
