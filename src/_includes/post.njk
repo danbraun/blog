@@ -5,7 +5,7 @@ layout: base.njk
   <i class="icon fa-regular fa-calendar fa-lg"></i> {{ page.date | postDate }}
 </div>
 
-{{ content | safe}}
+{{ content | safe }}
 
 <nav class="next-prev-post">
   {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
