@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const esbuild = require("esbuild");
+const eleventyFetch = require("@11ty/eleventy-fetch");
 
 const getOrderedPosts = (collection) => {
     return (
@@ -15,7 +16,7 @@ const getOrderedPosts = (collection) => {
 }
 
 const getPostDate = (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toLocaleString(DateTime.DATE_FULL);
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toLocaleString(DateTime.DATE_FULL);
 }
 
 const buildJS = async () => {
@@ -28,4 +29,33 @@ const buildJS = async () => {
     })
 }
 
-module.exports = { getOrderedPosts, getPostDate, buildJS };
+const blogImage = async (params) => {
+    const source_low = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/v1673798931/blog/";
+    const source_med = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/v1673798931/blog/";
+    const source_high = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/v1673798931/blog/";
+    const infoURL = `https://res.cloudinary.com/brauntrutta/image/upload/t_getimageinfo/blog/${params.filename}`;
+    let width = 0;
+    let height = 0;
+    const result = await eleventyFetch(infoURL, {
+        duration: "1y",
+        type: "json"
+    }).catch((error) => {
+        console.log(`oh no...${error}`)
+    })
+    width = result.output.width;
+    height = result.output.height;
+    return `<figure>
+      <img src="${source_med}${params.filename}" 
+           srcset="${source_low}${params.filename} 400w,
+           ${source_med}${params.filename} 800w,
+           ${source_high}${params.filename} 1600w"
+           sizes="(min-width: 768px) 768px, 100vw"
+           alt="${params.alt}" 
+           loading="lazy"
+           width="${width}"
+           height="${height}">
+    <figcaption>${params.caption}</figcaption>
+  </figure>`
+}
+
+module.exports = { getOrderedPosts, getPostDate, buildJS, blogImage };
