@@ -8,7 +8,7 @@ templateEngineOverride: njk,md
 Recently I had to figure out a way to serve images in my posts that not only worked, but performed well.
 
 ## Eleventy
-This site, my first [Eleventy](https://www.11ty.dev/) site, works by generating static pages from Nunjucks templates and markdown files. Eleventy is flexible in what kind of files it uses, but that's how I'm using it. Blog content (not images - see below) and code all live together in a Git repository on Github. To serve the site I have a free Netlify account that watches this repo and builds it's static pages when things change. 
+This site, my first [Eleventy](https://www.11ty.dev/) site, works by generating static pages from Nunjucks templates and markdown files. Eleventy is flexible in what kind of files it uses, but that's how I'm using it. Blog content (not images - see below) and code all live together in a Git repository on Github. To serve the site, I have a free Netlify account that watches this repo and builds it's static pages when things change. 
 
 ## Cloudinary
 Strictly speaking, Netlify is not entirely serving the site. 
@@ -180,6 +180,10 @@ This all results in a handsome `<figure>` element after the site builds.
 
 ## Conclusion
 
-I didn't anticipate digging quite so deep into making some images appear on my blog site. I haven't even got pagination figured out yet! But I'm really happy to appease our Lighthouse overload, though I am told there's more work to do. 
+I didn't anticipate digging quite so deep into making some images appear on my blog site. I haven't even got pagination figured out yet! But I'm really happy to appease our Lighthouse overlords.
 
-For example, my Google font is causing FOUC and I probably don't need that render blocking FontAwesome library for these 2 icons I'm using.
+This idea could be extended. For example, I could add more parameters to return a smaller, floated image. Currently all my images using this shortcode take up the full with of the main column.
+
+Since I couldn't bare the irony of ending this post as the only entry without an image, here's some vegetables:
+
+{% blogImage filename="buttercup-squash", alt="Buttercup squash lined up on a deck railing", caption="Buttercup squash from my garden, 2022 season" %}
