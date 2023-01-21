@@ -12,7 +12,10 @@ layout: base.njk
     </ul>
 
     <h2>Drop a line</h2>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <div style="display:none;">
+            <input name="bot-field"/>
+        </div>
 
         <input placeholder="Your Name" required type="text" name="name"/>
         <input placeholder="Your Email (optional)" type="email" name="email"/>
