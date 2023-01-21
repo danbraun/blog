@@ -98,16 +98,12 @@ const blogImage = async (params) => {
     const source_med = `https://res.cloudinary.com/***********/image/upload/c_scale,w_800/f_auto/blog/${params.filename}`;
     const source_high = `https://res.cloudinary.com/***********/image/upload/c_scale,w_1600/f_auto/blog/${params.filename}`;
     const infoURL = `https://res.cloudinary.com/***********/image/upload/fl_getinfo/blog/${params.filename}`;
-    let width = 0;
-    let height = 0;
     const result = await eleventyFetch(infoURL, {
         duration: "1y",
         type: "json"
     }).catch((error) => {
         console.log(`oh no...${error}`)
     })
-    width = result.output.width;
-    height = result.output.height;
     return `<figure>
       <img src="${source_med}" 
            srcset="${source_low} 400w,
@@ -116,15 +112,15 @@ const blogImage = async (params) => {
            sizes="(min-width: 768px) 768px, 100vw"
            alt="${params.alt}" 
            loading="lazy"
-           width="${width}"
-           height="${height}">
+           width="${result.output.width}"
+           height="${result.output.height}">
     <figcaption>${params.caption}</figcaption>
   </figure>`
 }
 ```
 I start by declaring the function as `async` so I can use `await` later for the API request. The params argument contains a filename, caption and alt text from the shortcode call coming from markdown files.
 
-Then I set variables to hold 3 URLs used by srcset for different sizes and 1 more URL for requesting the image metadata. Two more variables are added for width and height.
+Then I set variables to hold 3 URLs used by srcset and 1 more for requesting the image metadata.
 
 Next is where I obtain the file meta data in JSON format. `result` is the object holding these values and I access them with dot notation.
 

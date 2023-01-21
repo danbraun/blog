@@ -34,16 +34,12 @@ const blogImage = async (params) => {
     const source_med = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/blog/${params.filename}`;
     const source_high = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/blog/${params.filename}`;
     const infoURL = `https://res.cloudinary.com/brauntrutta/image/upload/t_getimageinfo/blog/${params.filename}`;
-    let width = 0;
-    let height = 0;
     const result = await eleventyFetch(infoURL, {
         duration: "1y",
         type: "json"
     }).catch((error) => {
         console.log(`oh no...${error}`)
     })
-    width = result.output.width;
-    height = result.output.height;
     return `<figure>
       <img src="${source_med}" 
            srcset="${source_low} 400w,
@@ -52,8 +48,8 @@ const blogImage = async (params) => {
            sizes="(min-width: 768px) 768px, 100vw"
            alt="${params.alt}" 
            loading="lazy"
-           width="${width}"
-           height="${height}">
+           width="${result.output.width}"
+           height="${result.output.height}">
     <figcaption>${params.caption}</figcaption>
   </figure>`
 }
