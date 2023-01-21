@@ -151,7 +151,7 @@ const result = await eleventyFetch(infoURL, {
 ```
 It creates a `.cache` folder in the root of your project, and in my case its saving each of the json strings that Cloudinary is sending me with my fl_getinfo requests. For one year. 
 
-This is only relevant during local development, though there are some hoops you can jump though to have Netlify open access to a `.cache` folder during production builds. I'm only using it locally though to prevent unnecessary transitions and perhaps cut down on build times once I have more than 5 blog posts.
+This is only relevant during local development, though there are some hoops you can jump though to have Netlify open access to a `.cache` folder during production builds (Edit: or use the [netlify-cache-plugin](https://www.11ty.dev/docs/plugins/fetch/#running-this-on-your-build-server)). I'm only using it locally though to prevent unnecessary transitions and perhaps cut down on build times once I have more than 5 blog posts.
 
 This all results in a handsome `<figure>` element after the site builds.
 
