@@ -97,9 +97,9 @@ Here is what the function for the `blogImage` shortcode looks like. I'm using th
 const eleventyFetch = require("@11ty/eleventy-fetch");
 
 const blogImage = async (params) => {
-    const source_low = "https://res.cloudinary.com/***********/image/upload/t_blog-low/v1673798931/blog/";
-    const source_med = "https://res.cloudinary.com/***********/image/upload/t_blog-med/v1673798931/blog/";
-    const source_high = "https://res.cloudinary.com/***********/image/upload/t_blog-high/v1673798931/blog/";
+    const source_low = "https://res.cloudinary.com/***********/image/upload/t_blog-low/blog/";
+    const source_med = "https://res.cloudinary.com/***********/image/upload/t_blog-med/blog/";
+    const source_high = "https://res.cloudinary.com/***********/image/upload/t_blog-high/blog/";
     // below I'm using a named transition t_getimageinfo in order to add some security - but its just using fl_getinfo underneath
     const infoURL = `https://res.cloudinary.com/***********/image/upload/t_getimageinfo/blog/${params.filename}`;
     let width = 0;
@@ -165,10 +165,10 @@ This all results in a handsome `<figure>` element after the site builds.
 
 ```html
 <figure>
-      <img src="https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/v1673798931/blog/rockisland" 
-      srcset="https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/v1673798931/blog/rockisland 400w,
-           https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/v1673798931/blog/rockisland 800w,
-           https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/v1673798931/blog/rockisland 1600w" 
+      <img src="https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/blog/rockisland" 
+      srcset="https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/blog/rockisland 400w,
+           https://res.cloudinary.com/brauntrutta/image/upload/t_blog-me/blog/rockisland 800w,
+           https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/blog/rockisland 1600w" 
            sizes="(min-width: 768px) 768px, 100vw" 
            alt="Sunrise on Rock Island" 
            loading="lazy" 
@@ -186,4 +186,4 @@ This idea could be extended. For example, I could add more parameters to return 
 
 Since I couldn't bare the irony of ending this post as the only entry without an image, here's some vegetables:
 
-{% blogImage filename="buttercup-squash", alt="Buttercup squash lined up on a deck railing", caption="Buttercup squash from my garden, 2022 season" %}
+{% blogImage filename="six-buttercup-squash", alt="Buttercup squash lined up on a deck railing", caption="Buttercup squash from my garden, 2022 season" %}

@@ -30,9 +30,9 @@ const buildJS = async () => {
 }
 
 const blogImage = async (params) => {
-    const source_low = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/f_auto/v1673798931/blog/";
-    const source_med = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/v1673798931/blog/";
-    const source_high = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/v1673798931/blog/";
+    const source_low = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/f_auto/blog/";
+    const source_med = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/blog/";
+    const source_high = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/blog/";
     const infoURL = `https://res.cloudinary.com/brauntrutta/image/upload/t_getimageinfo/blog/${params.filename}`;
     let width = 0;
     let height = 0;
