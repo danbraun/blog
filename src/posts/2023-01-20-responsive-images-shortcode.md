@@ -25,12 +25,9 @@ Like Netlify, I'm also using the free tier at Cloudinary. Notice a theme? Cloudi
 So my first idea for displaying photos worked pretty well. I finally got my head around `srcset` and `sizes` and could use Cloudinary to request small, medium and large versions of each image to fill in the `srcset` attribute each time the site builds.
 
 ```javascript
-// t_blog-low, etc. is a named transformation, a way to group a number of 
-// transformations - this also allows Cloudinary to prevent 3rd parties
-// from requesting arbitrary transformations with your account.
-const source_low = "https://res.cloudinary.com/*******/image/upload/t_blog-low/blog/filename";
-const source_med = "https://res.cloudinary.com/*******/image/upload/t_blog-med/blog/filename";
-const source_high = "https://res.cloudinary.com/*******/image/upload/t_blog-high/blog/filename";
+const source_low = "https://res.cloudinary.com/*******/image/upload/c_scale,w_400/f_auto/blog/filename";
+const source_med = "https://res.cloudinary.com/*******/image/upload/c_scale,w_800/f_auto/blog/filename";
+const source_high = "https://res.cloudinary.com/*******/image/upload/c_scale,w_1600/f_auto/blog/filename";
 return `<figure>
       <img src="${source_low}" 
            srcset="${source_low} 400w,
@@ -97,11 +94,10 @@ Here is what the function for the `blogImage` shortcode looks like. I'm using th
 const eleventyFetch = require("@11ty/eleventy-fetch");
 
 const blogImage = async (params) => {
-    const source_low = "https://res.cloudinary.com/***********/image/upload/t_blog-low/blog/";
-    const source_med = "https://res.cloudinary.com/***********/image/upload/t_blog-med/blog/";
-    const source_high = "https://res.cloudinary.com/***********/image/upload/t_blog-high/blog/";
-    // below I'm using a named transition t_getimageinfo in order to add some security - but its just using fl_getinfo underneath
-    const infoURL = `https://res.cloudinary.com/***********/image/upload/t_getimageinfo/blog/${params.filename}`;
+    const source_low = `https://res.cloudinary.com/***********/image/upload/c_scale,w_400/f_auto/blog/${params.filename}`;
+    const source_med = `https://res.cloudinary.com/***********/image/upload/c_scale,w_800/f_auto/blog/${params.filename}`;
+    const source_high = `https://res.cloudinary.com/***********/image/upload/c_scale,w_1600/f_auto/blog/${params.filename}`;
+    const infoURL = `https://res.cloudinary.com/***********/image/upload/fl_getinfo/blog/${params.filename}`;
     let width = 0;
     let height = 0;
     const result = await eleventyFetch(infoURL, {
@@ -113,10 +109,10 @@ const blogImage = async (params) => {
     width = result.output.width;
     height = result.output.height;
     return `<figure>
-      <img src="${source_med}${params.filename}" 
-           srcset="${source_low}${params.filename} 400w,
-           ${source_med}${params.filename} 800w,
-           ${source_high}${params.filename} 1600w"
+      <img src="${source_med}" 
+           srcset="${source_low} 400w,
+           ${source_med} 800w,
+           ${source_high} 1600w"
            sizes="(min-width: 768px) 768px, 100vw"
            alt="${params.alt}" 
            loading="lazy"
@@ -128,7 +124,7 @@ const blogImage = async (params) => {
 ```
 I start by declaring the function as `async` so I can use `await` later for the API request. The params argument contains a filename, caption and alt text from the shortcode call coming from markdown files.
 
-Then I set variables to hold 3 URLs used by srcset for different sizes and 1 more URL for requesting the image metadata. In all cases I'm using named transformations which are like presets you can create on the Cloudinary website. Two more variables are added for width and height.
+Then I set variables to hold 3 URLs used by srcset for different sizes and 1 more URL for requesting the image metadata. Two more variables are added for width and height.
 
 Next is where I obtain the file meta data in JSON format. `result` is the object holding these values and I access them with dot notation.
 
