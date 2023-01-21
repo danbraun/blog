@@ -41,7 +41,7 @@ return `<figure>
 ```
 This is great because I never have to resize and keep track of extra copies of images.
 
-But something is missing. Chrome's, Lighthouse told me so. Most easily accessed under a tab in Chrome's dev tools, Lighthouse is there to judge you and your website. Ok, maybe not you - and really, its trying to help.
+But something is missing. Chrome's Lighthouse told me so. Most easily accessed under a tab in Chrome's dev tools, Lighthouse is there to judge you and your website. Ok, maybe not you - and really, its trying to help.
 
 In my case, under it's "Performance" metrics, I needed to pay more attention to CLS or "Cumulative Layout Shift". Simply, my pages were sliding content around as images downloaded. Maybe not as noticeable on faster connections, the browser was in fact downloading text faster than images. Because I hadn't bothered to **tell the browser how much space the images would occupy** before they arrived, the images were just rudely shoving content out of their way.
 
