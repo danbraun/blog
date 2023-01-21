@@ -30,9 +30,9 @@ const buildJS = async () => {
 }
 
 const blogImage = async (params) => {
-    const source_low = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/f_auto/blog/";
-    const source_med = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/blog/";
-    const source_high = "https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/blog/";
+    const source_low = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/f_auto/blog/${params.filename}`;
+    const source_med = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/blog/${params.filename}`;
+    const source_high = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/blog/${params.filename}`;
     const infoURL = `https://res.cloudinary.com/brauntrutta/image/upload/t_getimageinfo/blog/${params.filename}`;
     let width = 0;
     let height = 0;
@@ -45,10 +45,10 @@ const blogImage = async (params) => {
     width = result.output.width;
     height = result.output.height;
     return `<figure>
-      <img src="${source_med}${params.filename}" 
-           srcset="${source_low}${params.filename} 400w,
-           ${source_med}${params.filename} 800w,
-           ${source_high}${params.filename} 1600w"
+      <img src="${source_med}" 
+           srcset="${source_low} 400w,
+           ${source_med} 800w,
+           ${source_high} 1600w"
            sizes="(min-width: 768px) 768px, 100vw"
            alt="${params.alt}" 
            loading="lazy"
