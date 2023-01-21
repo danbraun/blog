@@ -1,14 +1,20 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const metagen = require('eleventy-plugin-metagen');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const { getOrderedPosts, getPostDate, buildJS, blogImage } = require("./utils");
 
-module.exports = (function (eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets/');
   eleventyConfig.addPassthroughCopy('./src/favicon.png');
   eleventyConfig.addPassthroughCopy('./src/robots.txt');
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(metagen);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    codeAttributes: {
+      style: 'font-size: 0.8em'
+    },
+  })
   eleventyConfig.addWatchTarget("./src/scss/");
   eleventyConfig.addWatchTarget("./src/js/");
   // for blog lists
@@ -27,4 +33,4 @@ module.exports = (function (eleventyConfig) {
       output: "public"
     }
   }
-});
+};
