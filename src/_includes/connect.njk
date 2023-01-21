@@ -1,0 +1,27 @@
+---
+layout: base.njk
+---
+<div class="about-content">
+    <h2>Around the web</h2>
+    <ul class="social-list">
+        {%- for connection in connectList %}
+            <li>
+                <a rel="{{ connection.rel }}" target="_blank" href="{{ connection.url }}">{{ connection.name }}</a>
+            </li>
+        {%- endfor %}
+    </ul>
+
+    <h2>Drop a line</h2>
+    <form name="contact" method="POST" data-netlify="true">
+
+        <input placeholder="Your Name" required type="text" name="name"/>
+        <input placeholder="Your Email (optional)" type="email" name="email"/>
+        <textarea rows="8" placeholder="Your Message..." required name="message"></textarea>
+
+        <button type="submit">Send</button>
+
+    </form>
+    <p>
+    🤨
+    </p>
+</div>
