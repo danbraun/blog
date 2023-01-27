@@ -1,8 +1,12 @@
 ---
 layout: base.njk
 ---
-<div class="post-date">
-  <i class="icon fa-regular fa-calendar fa-lg"></i> {{ page.date | postDate }}
+<div class="post-meta">
+  <div class="post-date">
+    <i class="icon fa-regular fa-calendar fa-lg"></i>
+    {{ page.date | postDate }}
+  </div>
+  {%- include 'taglist.njk' -%}
 </div>
 
 {{ content | safe }}

@@ -1,26 +1,44 @@
 @use '../util';
+
 figure {
     margin: 0 0 1em 0;
+
     figcaption {
         text-align: center;
         font-size: .8em
     }
+
     img {
         width: 100%;
         height: auto;
     }
 }
+
 audio {
     margin-bottom: 1.5em;
 }
-.icon {
-    color: util.$accent-color;
+
+.post-meta {
+    .icon {
+        color: util.$accent-color;
+    }
+
+    .post-date {
+        display: inline-block;
+        font-size: 1em;
+        margin-bottom: 1em;
+        @media (min-width: util.$medium) {
+            margin-bottom: 0;
+        }
+    }
 }
+
 .next-prev-post {
-    clear:both;
-    font-size: .8em;    
+    clear: both;
+    font-size: .8em;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+
     a {
         font-weight: bold;
     }

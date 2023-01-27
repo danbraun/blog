@@ -1,0 +1,17 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+permalink: /tags/{{ tag | slugify }}/
+layout: base.njk
+---
+
+{% set postlist = collections[tag] %}
+
+<h2>Tagged “#{{ tag }}”</h2>
+
+{% include 'postlist.njk' %}
