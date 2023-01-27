@@ -1,25 +1,33 @@
 @use '../util';
 .post-listing {
     list-style: none;
-    font-size: 1.5em;
-    padding-bottom: 0.7em;
+    padding-bottom: 1.2em;
     .post-date {
-        display: inline;
-        font-size: 0.7em;
-        font-weight: bold;
+        display: inline-block;
+        font-size: 1rem;
         color: util.$accent-color;
         line-height: 1;
-        padding-bottom: 0.7em;
+        @media (min-width: util.$small) {
+          margin-bottom: 0.7em;
+        }
       }
       
     .post-excerpt {
-      font-size: 0.7em;
+      font-size: 1rem;
+    }
+    h3 {
+      margin-top: 0.7em;
+    }
+    @media (min-width: util.$small) {
+      h3 {
+        margin-top: 0;
+      }
     }
   }
   .post-listing:not(:last-child) {
     border-bottom: 1px solid ;
   }
   .post-listing:not(:first-child) {
-    margin-top: 0.7em;
+    margin-top: 1.2em;
   }
 

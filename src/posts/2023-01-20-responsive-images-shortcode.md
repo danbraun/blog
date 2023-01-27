@@ -61,7 +61,11 @@ Therefore, I needed a way dynamically obtain each image's width and height at bu
 
 It took me a couple of nights of searching the web, reviewing [excellent blogs like Raymond Camden's](https://www.raymondcamden.com/2022/11/04/adding-responsive-images-with-cloudinary) and asking questions online to arrive at a simple API request to Cloudinary that works just like how I was already requesting images. Instead I needed to use a "transformation" called [fl_getinfo](https://cloudinary.com/documentation/transformation_reference#fl_getinfo).
 
-Oddly, it doesn't transform a resulting image, but instead returns a JSON string with the image's metadata. For example, `https://res.cloudinary.com/*********/image/upload/fl_getinfo/blog/beans.jpg` may return something like:
+Oddly, it doesn't transform a resulting image, but instead returns a JSON string with the image's metadata. For example, 
+```html
+https://res.cloudinary.com/*********/image/upload/fl_getinfo/blog/beans.jpg
+``` 
+may return something like:
 ```json
 {
   "input": {
