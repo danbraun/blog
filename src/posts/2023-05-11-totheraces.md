@@ -25,7 +25,7 @@ All this to say that I'm really trying to keep anything but winter from taking m
 
 This year, I'm into it earlier than usual. My first race listed below happened in early April. And after a mistake at my second race of the year, I added a new gadget to my running, a Garmin Forerunner watch.
 
-Using the watch I've started to structure my training to a plan Garmin provides and adjusts based on recorded data. I trying a "Training for a 10k" plan with a target race being one in July.
+Using the watch I've started to structure my training to a plan Garmin provides and adjusts based on recorded data. I'm trying a "Training for a 10k" plan with a target race being one in July.
 
 The plan has me doing things that I've not done before. Like "strides". Basically interval training with short bursts of speed work. This almost sent me back to the bench last weekend with what seemed like a pulled groin. So its not perfect. I believe I'm out of that trouble today and have not had to stop running. Which is good news as I've already signed up for several more races, including...
 
@@ -41,7 +41,7 @@ Chilly morning. Easter themed so, pastel colors on the shirt and a person dresse
 
 I kicked off from the start line way too fast and burned out pretty bad a quarter of the way through.
 
-Finished 45:09.48 11th out of 80 (chip time)
+Finished 11th out of 80 45:09.48 (chip time)
 ### Run the Rock - 10k (April 23rd)
 #### Thoughts and comments:
 This time my race crew (Mom) was along. Again a chilly morning. I started at the top and held the lead for the first half. But the joke was on me as I ran pass the turn around point and its seemingly despondent volunteer who simply waved me along.
