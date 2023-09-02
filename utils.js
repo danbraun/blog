@@ -30,10 +30,10 @@ const buildJS = async () => {
 }
 
 const blogImage = async (params) => {
-    const source_low = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/f_auto/blog/${params.filename}`;
-    const source_med = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/blog/${params.filename}`;
-    const source_high = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/blog/${params.filename}`;
-    const infoURL = `https://res.cloudinary.com/brauntrutta/image/upload/t_getimageinfo/blog/${params.filename}`;
+    const source_low = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-low/f_auto/blog/${params.filename}`,
+          source_med = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-med/f_auto/blog/${params.filename}`,
+          source_high = `https://res.cloudinary.com/brauntrutta/image/upload/t_blog-high/f_auto/blog/${params.filename}`,
+          infoURL = `https://res.cloudinary.com/brauntrutta/image/upload/t_getimageinfo/blog/${params.filename}`
     const result = await eleventyFetch(infoURL, {
         duration: "1y",
         type: "json"

@@ -1,5 +1,5 @@
 ---
-tags: life
+tags: running
 title: Off to the Races
 publish: true
 excerpt: Running in 2023
