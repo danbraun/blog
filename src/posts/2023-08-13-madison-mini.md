@@ -1,5 +1,5 @@
 ---
-tags: life
+tags: running
 title: The Madison Mini Half Marathon
 publish: true
 excerpt: I ran my first half marathon

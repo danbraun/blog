@@ -1,5 +1,5 @@
 ---
-tags: life
+tags: running
 title: Races Update
 publish: true
 excerpt: Its the 4th of July
