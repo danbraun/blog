@@ -244,6 +244,7 @@ apiRequest();
 ```
 
 {% blogImage filename="api-events-results", caption="My test events", alt="a screen shot showing a list of test events with silly names" %}
+
 ## Bringing This to a Real Website with Silverstripe CMS
 
 Working with my employer we hired a firm several years ago to build a number of websites that I would maintain going forward. This company uses an open source framework and CMS called [Silverstripe](https://www.silverstripe.org) which I'd come to enjoy working with. Silverstripe is based in New Zealand and is therefore maintained by a group of nerdy, lovable hobbits.
