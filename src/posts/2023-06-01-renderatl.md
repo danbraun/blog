@@ -1,7 +1,6 @@
 ---
 tags: web development
 title: RenderATL - Day 1
-publish: true
 excerpt: RenderATL Developer Conference in Atlanta, GA
 templateEngineOverride: njk,md
 ---

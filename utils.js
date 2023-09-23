@@ -40,8 +40,7 @@ const blogImage = async (params) => {
     }).catch((error) => {
         console.log(`oh no...${error}`)
     })
-    return `<figure>
-      <img src="${source_med}" 
+    return `<figure><img src="${source_med}" 
            srcset="${source_low} 400w,
            ${source_med} 800w,
            ${source_high} 1600w"
@@ -49,9 +48,7 @@ const blogImage = async (params) => {
            alt="${params.alt}" 
            loading="lazy"
            width="${result.output.width}"
-           height="${result.output.height}">
-    <figcaption>${params.caption}</figcaption>
-  </figure>`
+           height="${result.output.height}"><figcaption>${params.caption}</figcaption></figure>`
 }
 
 module.exports = { getOrderedPosts, getPostDate, buildJS, blogImage };

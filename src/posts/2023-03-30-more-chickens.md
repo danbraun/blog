@@ -1,7 +1,6 @@
 ---
 tags: life
 title: More Chickens
-publish: true
 excerpt: Because I can't pay these street prices for eggs
 templateEngineOverride: njk,md
 ---

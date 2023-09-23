@@ -1,6 +1,7 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const metagen = require('eleventy-plugin-metagen');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const util = require('util');
 
 const { getOrderedPosts, getPostDate, buildJS, blogImage } = require("./utils");
 
@@ -29,6 +30,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
 		return (tags || []).filter(tag => ["post"].indexOf(tag) === -1);
 	});
+  eleventyConfig.addFilter('dump', obj => {
+    return util.inspect(obj)
+  });
   return {
     dir: {
       input: "src",

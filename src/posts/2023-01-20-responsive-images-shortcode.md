@@ -1,7 +1,6 @@
 ---
 tags: web development
 title: Eleventy, Images and Cloudinary
-publish: true
 excerpt: Using an Eleventy shortcode and Cloudinary for responsive images to my blog.
 templateEngineOverride: njk,md
 ---

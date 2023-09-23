@@ -1,7 +1,6 @@
 ---
 tags: web development
 title: Getting API Results with PHP and Doing Something With Them
-publish: true
 excerpt: With some help from ChatGPT, I created a working example of combining multiple request results from Eventbrite's API and displaying them on a webpage within the Silverstripe framework.
 templateEngineOverride: njk,md
 ---

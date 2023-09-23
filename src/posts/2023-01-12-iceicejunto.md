@@ -1,7 +1,6 @@
 ---
 title: Ice Ice Junto
 tags: music production
-publish: true
 order: 3
 excerpt: Making music with a glass of ice water
 templateEngineOverride: njk,md
