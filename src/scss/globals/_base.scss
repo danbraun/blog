@@ -68,15 +68,41 @@ audio {
 nav {
   margin-block: 1em;
 }
-
+header * {
+  position: relative;
+  z-index: 2;
+}
 header {
+  position: relative;
+  &::before {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: solid util.$accent-color 0.5em;
+  }
+  &::after {
+    opacity: 0.4;
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
   padding-top: 3em;
   padding-bottom: 1em;
   padding-inline: 1em;
   background-color: black;
   color: white;
-  background-image: linear-gradient(135deg, util.$accent-color, 10%, util.$accent-color-light 100%);
-  border-bottom: solid util.$accent-color 0.5em;
+  background-image: linear-gradient(135deg, black, 50%, util.$accent-color-light 100%);
   text-align: center;
 
   nav {
