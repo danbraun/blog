@@ -48,7 +48,7 @@ const blogImage = async (params) => {
            alt="${params.alt}" 
            loading="lazy"
            width="${result.output.width}"
-           height="${result.output.height}"><figcaption>${params.caption}</figcaption></figure>`
+           height="${result.output.height}"><figcaption>${(params.caption) ? params.caption : ''}</figcaption></figure>`
 }
 
 module.exports = { getOrderedPosts, getPostDate, buildJS, blogImage };
