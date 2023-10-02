@@ -13,7 +13,8 @@ export function getHeaderBackground() {
     if (!latestPostEl) return
 
     const latestPost = latestPostEl.getAttribute("href")
-    fetch(location.href + latestPost.replace(/\//, ""))
+    const page = location.origin + latestPost
+    fetch(page)
       .then(function (response) {
         // The API call was successful!
         return response.text()
