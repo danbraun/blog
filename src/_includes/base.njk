@@ -21,12 +21,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/style.css' | url}}">
     <script src="https://kit.fontawesome.com/6f2a8c42bd.js" crossorigin="anonymous"></script>
+
+    {% if crawl is defined -%}
+    {% set img = crawl -%}
+    {% set img_alt = title -%}
+    {% else -%}
+    {% set img = "https://blog.danbraun.me/assets/social.png" -%}
+    {% set img_alt = "Dan Braun standing in a field thinking about his blog" -%}
+    {% endif -%}
+
     {% metagen
     title = title,
     desc = excerpt,
     url = "https://blog.danbraun.me" + page.url,
-    img = "https://blog.danbraun.me/assets/social.png",
-    img_alt = "Dan Braun standing in a field thinking about his blog",
+    img = img,
+    img_alt = img_alt,
     twitter_card_type = "summary_large_image",
     name = "Daniel Braun",
     generator = "eleventy"
